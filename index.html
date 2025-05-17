@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link in Bio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto;
+      background-color: #ccc;
+      background-image: url('image.png'); /* Placeholder para a foto */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .handle {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #F5A623; /* Laranja */
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .occupation {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    body.dark-mode .occupation {
+      color: #bbb;
+    }
+
+    .bio {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .social-link {
+      color: #F5A623; /* Laranja */
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    body.dark-mode .social-link {
+      color: #F5A623;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .nav-btn {
+      background-color: #F5A623; /* Laranja */
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #d68f1e;
+    }
+
+    .link-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .link-btn {
+      background-color: white;
+      color: #F5A623; /* Laranja */
+      padding: 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode .link-btn {
+      background-color: #555;
+      color: #F5A623;
+    }
+
+    .link-btn:hover {
+      background-color: #F5A623;
+      color: white;
+    }
+
+    body.dark-mode .link-btn:hover {
+      background-color: #F5A623;
+      color: white;
+    }
+
+    .footer {
+      font-size: 12px;
+      color: #666;
+      margin-top: 20px;
+    }
+
+    body.dark-mode .footer {
+      color: #bbb;
+    }
+
+    .footer a {
+      color: #F5A623;
+      text-decoration: none;
+    }
+
+    body.dark-mode .footer a {
+      color: #F5A623;
+    }
+
+    .mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #F5A623;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .mode-toggle:hover {
+      background-color: #d68f1e;
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">Modo Escuro</button>
+  <div class="container">
+    <div class="profile-pic"></div>
+    <div class="handle">@biaolip_</div>
+    <div class="name">Beatriz Oliveira</div>
+    <div class="occupation">Empreendedora</div>
+    <div class="bio">Fé, coragem e ousadia. 🤍✨</div>
+    <div class="social-links">
+      <a href="#" class="social-link">@biaoli.acessorios_</a>
+      <a href="#" class="social-link">@agency_lidera 🧡</a>
+    </div>
+    <div class="nav-buttons">
+      <a href="#" class="nav-btn">Entre em Contato</a>
+      <a href="#" class="nav-btn">Meu Portfólio</a>
+    </div>
+    <div class="link-buttons">
+      <a href="#" class="link-btn">Visite Meu Site</a>
+      <a href="#" class="link-btn">Veja Depoimentos de Clientes</a>
+      <a href="#" class="link-btn">Leia Meu Blog</a>
+      <a href="#" class="link-btn">Conheça Meu Curso</a>
+    </div>
+    <div class="footer">
+      © 2025 Beatriz Oliveira | Feito com 🤍 | <a href="#">@biaoli.acessorios_</a> | <a href="#">@agency_lidera</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+      const button = document.querySelector('.mode-toggle');
+      button.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
+    }
+  </script>
+</body>
+</html>
